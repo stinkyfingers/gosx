@@ -37,3 +37,8 @@ func (e *Element) AssignGosxID() string {
 	currentGosxID++
 	return e.GosxID
 }
+
+func (e *Element) Null() bool {
+	elem := js.Global().Get("document").Call("getElementById", e.GosxID)
+	return elem == js.Null()
+}
