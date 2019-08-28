@@ -38,6 +38,7 @@ func (e *Element) AssignGosxID() string {
 	return e.GosxID
 }
 
+// Null...
 func (e *Element) Null() bool {
 	elem := js.Global().Get("document").Call("getElementById", e.GosxID)
 	return elem == js.Null()
