@@ -20,6 +20,7 @@ type Callback func(this js.Value, args []js.Value) interface{}
 
 var currentGosxID int
 
+// NewElement...
 func NewElement(tag, innerHTML string, attributes map[string]string, listeners map[string]js.Func, parent *Element) *Element {
 	e := &Element{
 		Tag:        tag,
@@ -32,6 +33,7 @@ func NewElement(tag, innerHTML string, attributes map[string]string, listeners m
 	return e
 }
 
+// AssignGosxID...
 func (e *Element) AssignGosxID() string {
 	e.GosxID = strconv.Itoa(currentGosxID)
 	currentGosxID++
